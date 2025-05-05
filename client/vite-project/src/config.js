@@ -1,0 +1,1 @@
+export const API_URL = "https://machine-task-vm2d.onrender.com"

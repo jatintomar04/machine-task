@@ -2,13 +2,17 @@ const express = require ("express")
 const colors = require ("colors");
 const multer = require("multer")
 const path = require('path');
+const cors = require('cors')
 
 const errorHandler = require("./server/middlewares/errorHandler");
 const connectDB = require("./server/config/db.config");
 
 require('dotenv').config()
 
-
+app.use(cors({
+    origin: '*', 
+    credentials: true
+  }));
 
 const app = express();
 const PORT = process.env.PORT || 5000;

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../config";
 
 // getUser
 
@@ -11,7 +12,7 @@ const  getUser = async (token) => {
        }
     }
  
-    const response = await axios.get(`/api/user/profile` , options)
+    const response = await axios.get(`${API_URL}/api/user/profile` , options)
     localStorage.setItem("singleUser", JSON.stringify(response.data));
     return response.data
  };
@@ -26,7 +27,7 @@ const  getUser = async (token) => {
        authorization: `Bearer ${token}`,
      },
    };
-   const response = await axios.put('/api/user/profile', formData, options);
+   const response = await axios.put(`${API_URL}/api/user/profile`, formData, options);
    return response.data; 
  };
 
@@ -38,7 +39,7 @@ const  getUser = async (token) => {
        authorization: `Bearer ${token}`,
      },
    };
-   const response = await axios.post('/api/user/profile', formData, options);
+   const response = await axios.post(`${API_URL}/api/user/profile`, formData, options);
 
    return response.data; 
  };
@@ -55,7 +56,7 @@ const  getalluserProfile = async (token) => {
       }
    }
 
-   const response = await axios.get(`/api/admin/users` , options)
+   const response = await axios.get(`${API_URL}/api/admin/users` , options)
 
 
    return response.data
@@ -71,7 +72,7 @@ const getUserById = async (id, token) => {
      }
    };
  
-   const response = await axios.get(`/api/admin/users/${id}`, options);
+   const response = await axios.get(`${API_URL}/api/admin/users/${id}`, options);
    localStorage.setItem("singleUser", JSON.stringify(response.data));
    return response.data;
  };
@@ -84,7 +85,7 @@ const deleteUser = async (id, token) => {
      }
    };
  
-   const response = await axios.delete(`/api/admin/users/${id}`, options);
+   const response = await axios.delete(`${API_URL}/api/admin/users/${id}`, options);
    return response.data;
  };
 

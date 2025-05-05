@@ -1,5 +1,5 @@
 import React from 'react'
-import { Landing } from './pages/landing'
+import { Landing } from './pages/Landing'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Register from './pages/Register'
 import Login from './pages/Login'

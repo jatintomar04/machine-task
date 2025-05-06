@@ -2,7 +2,7 @@ const express = require ("express")
 const colors = require ("colors");
 const multer = require("multer")
 const path = require('path');
-const cors = require('cors')
+const cors = require("cors")
 
 const errorHandler = require("./server/middlewares/errorHandler");
 const connectDB = require("./server/config/db.config");
@@ -24,9 +24,9 @@ app.use(express.urlencoded({extended:true}))
 
 //  cors setup
 app.use(cors({
-    origin: 'https://machine-task-mu.vercel.app/', // or your frontend URL
-    credentials: true
-}));
+    origin: 'http://localhost:5173', // or your frontend's actual URL
+    credentials: true, // if using cookies or sessions
+  }));
 
 
 //  Serve uploads folder publicly

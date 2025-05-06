@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended:true}))
 
 //  cors setup
 app.use(cors({
-    origin: 'https://machine-task-vert.vercel.app/', // or your frontend's actual URL
+    origin: 'https://machine-task-vert.vercel.app', // or your frontend's actual URL
     credentials: true, // if using cookies or sessions
   }));
 
